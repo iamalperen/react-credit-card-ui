@@ -1,7 +1,7 @@
-# Cardify - Modern React Credit Card UI Component
+# React Credit Card UI - Modern React Credit Card Component
 
-[![NPM Version](https://img.shields.io/npm/v/cardify)](https://www.npmjs.com/package/cardify) 
-[![NPM Downloads](https://img.shields.io/npm/dw/cardify)](https://www.npmjs.com/package/cardify)
+[![NPM Version](https://img.shields.io/npm/v/react-credit-card-ui)](https://www.npmjs.com/package/react-credit-card-ui) 
+[![NPM Downloads](https://img.shields.io/npm/dw/react-credit-card-ui)](https://www.npmjs.com/package/react-credit-card-ui)
 
 A customizable React component to display credit card information with a sleek UI, smooth animations, and responsive design principles.
 
@@ -18,18 +18,18 @@ A customizable React component to display credit card information with a sleek U
 ## Installation
 
 ```bash
-npm install cardify
+npm install react-credit-card-ui
 # or
-yarn add cardify
+yarn add react-credit-card-ui
 ```
 
 ## Usage
 
 ```jsx
 import React, { useState } from 'react';
-import { CreditCard } from 'cardify';
+import { CreditCard } from 'react-credit-card-ui';
 // Optional: Import CSS if your setup doesn't automatically handle package CSS
-// import 'cardify/dist/style.css'; 
+// import 'react-credit-card-ui/dist/style.css'; 
 import './App.css';
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Cardify Demo</h1>
+      <h1>React Credit Card UI Demo</h1>
 
       {/* Basic Usage (will take 100% width up to 420px max-width) */}
       <CreditCard
@@ -119,7 +119,7 @@ The component uses CSS Modules. You can customize styles by:
 
 ## Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/your-username/cardify/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/your-username/react-credit-card-ui/issues).
 
 ## License
 
