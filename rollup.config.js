@@ -5,10 +5,12 @@ import babel from '@rollup/plugin-babel';
 import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import terser from '@rollup/plugin-terser';
+import { readFileSync } from 'fs';
 
-// Use require for package.json compatibility
-// import pkg from './package.json' assert { type: 'json' };
-const pkg = require('./package.json');
+// ESM ile uyumlu package.json okuma
+const pkg = JSON.parse(
+  readFileSync(new URL('./package.json', import.meta.url), 'utf8')
+);
 
 export default {
   input: 'src/index.ts',

@@ -50,8 +50,18 @@
   backface-visibility: hidden;
   border-radius: 18px;
   color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
   /* box-shadow removed as requested */
   overflow: hidden; /* Clip internal content (like long text), not the card itself */
   display: flex;
@@ -69,17 +79,17 @@
   background: linear-gradient(135deg, #1a1f71 0%, #0169c1 100%);
 }
 .cardFront.mastercard {
-  background: linear-gradient(135deg, #EB001B 0%, #F79E1B 100%);
+  background: linear-gradient(135deg, #eb001b 0%, #f79e1b 100%);
 }
 .cardFront.amex {
-  background: linear-gradient(135deg, #2E77BC 0%, #6FBAE8 100%);
+  background: linear-gradient(135deg, #2e77bc 0%, #6fbae8 100%);
 }
 .cardFront.discover {
-  background: linear-gradient(135deg, #FF6600 0%, #FCAE1E 100%);
+  background: linear-gradient(135deg, #ff6600 0%, #fcae1e 100%);
 }
 
 .cardBack {
-  background: linear-gradient(135deg, #F0F0F0 0%, #D8D8D8 100%);
+  background: linear-gradient(135deg, #f0f0f0 0%, #d8d8d8 100%);
   transform: rotateY(180deg);
   z-index: 1;
   align-items: center;
@@ -101,18 +111,19 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   position: relative; /* Needed for pseudo-element positioning */
   background: linear-gradient(135deg, #d4af37, #b8860b, #d4af37); /* Gold-like gradient */
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 
-              inset 0 -1px 1px rgba(0, 0, 0, 0.2), 
-              0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.3),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.2);
   overflow: hidden; /* Clip internal elements */
 }
 
 /* Simulate chip contacts */
-.cardChip::before, 
+.cardChip::before,
 .cardChip::after {
   content: '';
   position: absolute;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.1));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
 }
 
 .cardChip::before {
@@ -120,8 +131,8 @@
   height: 100%;
   left: 25%;
   top: 0;
-  border-left: 1px solid rgba(0,0,0,0.1);
-  border-right: 1px solid rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .cardChip::after {
@@ -129,8 +140,8 @@
   height: 30%;
   left: 0;
   top: 35%;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .cardLogo {
@@ -228,9 +239,15 @@
 }
 
 @keyframes glow {
-  0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
-  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
-  100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
 }
 
 /* --- RTL Support --- */

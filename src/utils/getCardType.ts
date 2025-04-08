@@ -24,4 +24,4 @@ export const getCardType = (cardNumber: string): CardType => {
     }
   }
   return 'unknown';
-}; 
+};

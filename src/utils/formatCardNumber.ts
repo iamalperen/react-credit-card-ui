@@ -3,4 +3,4 @@ export const formatCardNumber = (num: string): string => {
   // Add spaces every 4 digits, handling potential incomplete groups
   const parts = cleaned.match(/.{1,4}/g);
   return parts ? parts.join(' ') : cleaned;
-}; 
+};

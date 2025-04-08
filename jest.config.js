@@ -1,6 +1,7 @@
-module.exports = {
+export default {
     preset: 'ts-jest',
     testEnvironment: 'jsdom',
+    extensionsToTreatAsEsm: ['.ts', '.tsx'],
     // Automatically clear mock calls and instances between every test
     clearMocks: true,
     // The directory where Jest should output its coverage files
@@ -11,7 +12,7 @@ module.exports = {
     moduleNameMapper: {
         // Handle CSS imports (with CSS modules)
         // identity-obj-proxy maps CSS module class names to themselves
-        '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+        '\\.(css|less|scss|sss|styl)$': 'identity-obj-proxy',
         // Handle image imports or other static assets
         '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/__mocks__/fileMock.js',
         // Handle module path aliases (if you have them in tsconfig.json, like @/*)
@@ -35,10 +36,12 @@ module.exports = {
     // Transform files with ts-jest
     transform: {
         // Use ts-jest preset to handle imports correctly
-        '^.+\\.(ts|tsx)$': ['ts-jest', {
-            tsconfig: 'tsconfig.json',
-            // Diagnostics: false, // uncomment if you have ts-jest specific errors
-        }],
+        '^.+\\.(ts|tsx)$': [
+            'ts-jest',
+            {
+                useESM: true,
+            },
+        ],
     },
     // Ignore transforms for node_modules except for specific ESM packages if needed
     transformIgnorePatterns: [
@@ -49,10 +52,10 @@ module.exports = {
     // Collect coverage from src directory, excluding index/types/constants
     collectCoverageFrom: [
         'src/**/*.{ts,tsx}',
-        '!src/index.ts',
-        '!src/core/types.ts',
-        '!src/core/constants.ts',
-        '!src/**/*.d.ts',
+        '!src/**/*.stories.{ts,tsx}',
+        '!src/**/*.test.{ts,tsx}',
+        '!src/**/*.types.{ts,tsx}',
+        '!src/**/index.{ts,tsx}',
         '!src/**/__tests__/**/*', // Exclude test files from coverage
         '!src/**/?(*.)+(spec|test).[tj]s?(x)', // Exclude test files using pattern
     ],

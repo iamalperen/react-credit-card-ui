@@ -6,7 +6,12 @@ import CreditCard from './CreditCard';
 jest.mock('../utils', () => ({
   getCardType: jest.fn((num) => (num.startsWith('4') ? 'visa' : 'unknown')),
   getCardLogo: jest.fn((type) => (type === 'visa' ? 'VisaLogo' : null)),
-  formatCardNumber: jest.fn((num) => num.replace(/\D/g, '').replace(/(.{4})/g, '$1 ').trim()),
+  formatCardNumber: jest.fn((num) =>
+    num
+      .replace(/\D/g, '')
+      .replace(/(.{4})/g, '$1 ')
+      .trim()
+  ),
   formatExpiryDate: jest.fn((date) => date),
   getCardMaxLength: jest.fn(() => 19),
 }));
@@ -34,11 +39,11 @@ describe('<CreditCard />', () => {
     expect(screen.getByText('Expires')).toBeInTheDocument();
     // Check logo (mock implementation)
     expect(screen.getByText('VisaLogo')).toBeInTheDocument();
-    
+
     // CVV section should be hidden initially, not absent from DOM
     const cardBack = screen.getByLabelText('Card back');
     expect(cardBack).toHaveAttribute('aria-hidden', 'true');
-    
+
     // The CVV elements are in the DOM but hidden - we don't test for their absence
     // Instead we check that the card back is properly hidden
     const cvvElement = screen.getByText('987');
@@ -54,21 +59,21 @@ describe('<CreditCard />', () => {
     // Assert: Initial state (front)
     const cardFront = screen.getByLabelText('Card front');
     const cardBack = screen.getByLabelText('Card back');
-    
+
     expect(cardFront).not.toHaveAttribute('aria-hidden', 'true');
     expect(cardBack).toHaveAttribute('aria-hidden', 'true');
-    
+
     // Act: Click to flip
     fireEvent.click(cardContainer);
 
     // Assert: Flipped state (back)
     expect(cardFront).toHaveAttribute('aria-hidden', 'true');
     expect(cardBack).not.toHaveAttribute('aria-hidden', 'true');
-    
+
     // CVV should be visible now (contained in an element that's not aria-hidden)
     const cvvElement = screen.getByText('987');
     expect(cvvElement.closest('[aria-hidden="true"]')).toBeNull();
-    
+
     expect(screen.getByText('CVV')).toBeInTheDocument(); // Default CVV label
     // Check updated aria-label
     expect(screen.getByRole('button', { name: /show card front/i })).toBeInTheDocument();
@@ -91,7 +96,7 @@ describe('<CreditCard />', () => {
     // Assert: Initial state (front)
     const cardFront = screen.getByLabelText('Card front');
     const cardBack = screen.getByLabelText('Card back');
-    
+
     expect(cardFront).not.toHaveAttribute('aria-hidden', 'true');
     expect(cardBack).toHaveAttribute('aria-hidden', 'true');
 
@@ -101,7 +106,7 @@ describe('<CreditCard />', () => {
     // Assert: Still front state
     expect(cardFront).not.toHaveAttribute('aria-hidden', 'true');
     expect(cardBack).toHaveAttribute('aria-hidden', 'true');
-    
+
     // The CVV is still in the DOM but remains hidden
     const cvvElement = screen.getByText('987');
     expect(cvvElement.closest('[aria-hidden="true"]')).not.toBeNull();

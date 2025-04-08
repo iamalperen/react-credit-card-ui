@@ -9,9 +9,9 @@ describe('getCardMaxLength', () => {
     { type: 'amex', expectedLength: 15 },
     { type: 'discover', expectedLength: 19 }, // Default max
     { type: 'dinersclub', expectedLength: 16 }, // Simplified max
-    { type: 'jcb', expectedLength: 19 },       // Default max
-    { type: 'maestro', expectedLength: 19 },    // Default max
-    { type: 'unknown', expectedLength: 19 },    // Default max
+    { type: 'jcb', expectedLength: 19 }, // Default max
+    { type: 'maestro', expectedLength: 19 }, // Default max
+    { type: 'unknown', expectedLength: 19 }, // Default max
     { type: 'some-other-type' as CardType, expectedLength: 19 }, // Default max for unhandled
   ];
 

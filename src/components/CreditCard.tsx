@@ -16,7 +16,7 @@ import {
   DEFAULT_CARD_BACK_ARIA_LABEL,
   DEFAULT_LABEL_CARD_HOLDER,
   DEFAULT_LABEL_EXPIRES,
-  DEFAULT_LABEL_CVV
+  DEFAULT_LABEL_CVV,
 } from '../core/constants';
 
 // Type for CSS variables
@@ -29,8 +29,8 @@ export interface CreditCardProps {
   cvv: string;
   issuer?: CardType;
   flipOnClick?: boolean;
-  width?: string;            // e.g., "350px", "100%"
-  maxWidth?: string;         // e.g., "500px"
+  width?: string; // e.g., "350px", "100%"
+  maxWidth?: string; // e.g., "500px"
   ariaLabel?: string;
   wrapperAriaLabel?: string;
   cardFrontAriaLabel?: string;
@@ -39,7 +39,7 @@ export interface CreditCardProps {
   expiresLabel?: string;
   cvvLabel?: string;
   direction?: 'ltr' | 'rtl';
-  className?: string;        // Allow adding external classes to the wrapper
+  className?: string; // Allow adding external classes to the wrapper
 }
 
 const CreditCard: React.FC<CreditCardProps> = ({
@@ -87,7 +87,8 @@ const CreditCard: React.FC<CreditCardProps> = ({
   }, [width, maxWidth]);
 
   // Combine CSS module classes with external className
-  const wrapperClasses = `${styles.wrapper} ${direction === 'rtl' ? styles.rtl : ''} ${className}`.trim();
+  const wrapperClasses =
+    `${styles.wrapper} ${direction === 'rtl' ? styles.rtl : ''} ${className}`.trim();
 
   const cardContainerClasses = `${styles.cardContainer} ${isFlipped ? styles.flipped : ''}`;
   const cardFrontClasses = `${styles.cardFace} ${styles.cardFront} ${styles[cardType] || ''}`;
@@ -95,24 +96,23 @@ const CreditCard: React.FC<CreditCardProps> = ({
 
   // ARIA labels setup remains the same
   const finalWrapperAriaLabel = wrapperAriaLabel ?? DEFAULT_WRAPPER_ARIA_LABEL;
-  const finalInteractiveAriaLabel = ariaLabel ??
-    (flipOnClick ?
-      (isFlipped ? DEFAULT_INTERACTIVE_ARIA_LABEL_BACK : DEFAULT_INTERACTIVE_ARIA_LABEL_FRONT)
+  const finalInteractiveAriaLabel =
+    ariaLabel ??
+    (flipOnClick
+      ? isFlipped
+        ? DEFAULT_INTERACTIVE_ARIA_LABEL_BACK
+        : DEFAULT_INTERACTIVE_ARIA_LABEL_FRONT
       : DEFAULT_INTERACTIVE_ARIA_LABEL_STATIC);
   const finalCardFrontAriaLabel = cardFrontAriaLabel ?? DEFAULT_CARD_FRONT_ARIA_LABEL;
   const finalCardBackAriaLabel = cardBackAriaLabel ?? DEFAULT_CARD_BACK_ARIA_LABEL;
 
   return (
-    <div
-      className={wrapperClasses}
-      style={wrapperStyle}
-      aria-label={finalWrapperAriaLabel}
-    >
+    <div className={wrapperClasses} style={wrapperStyle} aria-label={finalWrapperAriaLabel}>
       <div className={styles.scene} ref={cardRef}>
         <div
           className={cardContainerClasses}
           onClick={flipOnClick ? handleFlip : undefined}
-          role={flipOnClick ? "button" : undefined}
+          role={flipOnClick ? 'button' : undefined}
           tabIndex={flipOnClick ? 0 : undefined}
           aria-pressed={isFlipped}
           aria-label={finalInteractiveAriaLabel}
