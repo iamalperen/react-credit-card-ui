@@ -119,7 +119,7 @@ The component uses CSS Modules. You can customize styles by:
 
 ## Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/your-username/react-credit-card-ui/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/iamalperen/react-credit-card-ui/issues).
 
 ## License
 
