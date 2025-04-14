@@ -20,7 +20,7 @@ const cardPatterns: Omit<CardInfo, 'logo'>[] = [
   { type: 'amex', patterns: [/^3[47]/] },
   { type: 'dinersclub', patterns: [/^3(?:0[0-5]|[68])/] },
   { type: 'jcb', patterns: [/^35/] },
-  // Maestro - daha spesifik pattern, 6011 ve 65 ile başlayan kartları kapsamıyor
+  // Maestro
   { type: 'maestro', patterns: [/^(?:5[0|6-8]|6(?!011|5))/] },
 ];
 

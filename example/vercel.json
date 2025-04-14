@@ -1,0 +1,8 @@
+{
+  "name": "react-credit-card-ui-demo",
+  "framework": "vite",
+  "buildCommand": "yarn build",
+  "outputDirectory": "dist",
+  "nodeVersion": "18.x",
+  "installCommand": "yarn install --frozen-lockfile"
+} 
