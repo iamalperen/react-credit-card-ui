@@ -3,7 +3,6 @@
 [![NPM Version](https://img.shields.io/npm/v/react-credit-card-ui)](https://www.npmjs.com/package/react-credit-card-ui) 
 [![NPM Downloads](https://img.shields.io/npm/dw/react-credit-card-ui)](https://www.npmjs.com/package/react-credit-card-ui)
 [![CI/CD](https://github.com/iamalperen/cardify/actions/workflows/main.yml/badge.svg)](https://github.com/iamalperen/cardify/actions/workflows/main.yml)
-[![Publish Status](https://github.com/iamalperen/cardify/actions/workflows/publish.yml/badge.svg)](https://github.com/iamalperen/cardify/actions/workflows/publish.yml)
 [![Bundle Size](https://img.shields.io/bundlephobia/minzip/react-credit-card-ui)](https://bundlephobia.com/package/react-credit-card-ui)
 [![TypeScript](https://img.shields.io/npm/types/react-credit-card-ui)](https://www.npmjs.com/package/react-credit-card-ui)
 
