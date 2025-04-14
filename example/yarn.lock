@@ -1763,10 +1763,10 @@ queue-microtask@^1.2.2:
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-react-credit-card-ui@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-credit-card-ui/-/react-credit-card-ui-1.0.0.tgz#3583c0d99d9639449dba207ce8dbdac74642fa02"
-  integrity sha512-NkrUAOlqGOIR1mWqGK3TpIy3myM+29h0MJsOkpSXeb5x/WmES0uqeITRsye9jDZuB80MJ+rXl5S92hPAdtaq2w==
+react-credit-card-ui@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-credit-card-ui/-/react-credit-card-ui-1.0.1.tgz#32c8ca94bddb84d811e8fbae8d36cacf97dde591"
+  integrity sha512-w3UGLX0VujTZap+b7Sz7I/wv35/jfT7IvE15HYhOK41hJug7HvbruuajrsfctqV7oF6Dss9qs/oG97254lOG/Q==
 
 react-dom@^18.2.0:
   version "18.3.1"
