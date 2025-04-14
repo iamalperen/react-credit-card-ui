@@ -1,3 +1,14 @@
+/**
+ * Gets the maximum length of a credit card number based on its type
+ * @param type The type of credit card (visa, mastercard, etc.)
+ * @returns The maximum number of digits allowed for the card type
+ * @example
+ * // Returns 16
+ * getCardMaxLength("visa")
+ *
+ * // Returns 15
+ * getCardMaxLength("amex")
+ */
 import { CardType } from '../core/types';
 
 // Standard maximum lengths based on ISO/IEC 7812 and common usage.

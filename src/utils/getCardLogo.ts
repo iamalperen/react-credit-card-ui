@@ -1,3 +1,14 @@
+/**
+ * Gets the appropriate logo for a credit card type
+ * @param type The type of credit card (visa, mastercard, etc.)
+ * @returns React node with the logo, or null for unknown card types
+ * @example
+ * // Returns the Visa logo node
+ * getCardLogo("visa")
+ *
+ * // Returns null
+ * getCardLogo("unknown")
+ */
 import React from 'react';
 import { CardType } from '../core/types';
 

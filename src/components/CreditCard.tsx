@@ -1,3 +1,33 @@
+/**
+ * CreditCard component provides a visual representation of a credit card with customizable
+ * content, appearance, and interactive features.
+ *
+ * The component displays both front and back sides of a card and supports flipping animation.
+ * It automatically identifies card type from the number or accepts a manual override.
+ *
+ * @example
+ * // Basic usage
+ * <CreditCard
+ *   cardNumber="4111 1111 1111 1111"
+ *   cardHolder="JOHN DOE"
+ *   expiryDate="12/25"
+ *   cvv="123"
+ * />
+ *
+ * // With customizations
+ * <CreditCard
+ *   cardNumber="5555 5555 5555 4444"
+ *   cardHolder="JANE SMITH"
+ *   expiryDate="10/26"
+ *   cvv="321"
+ *   issuer="mastercard"
+ *   width="350px"
+ *   maxWidth="500px"
+ *   cardHolderLabel="NAME"
+ *   expiresLabel="VALID THRU"
+ *   flipOnClick={false}
+ * />
+ */
 import React, { useMemo, useState, MouseEventHandler, useRef, CSSProperties } from 'react';
 import { getCardType, getCardLogo, formatCardNumber, formatExpiryDate } from '../utils';
 import { CardType } from '../core/types';
@@ -22,24 +52,44 @@ import {
 // Type for CSS variables
 type CSSVariableStyle = CSSProperties & { [key: `--${string}`]: string | number };
 
+/**
+ * Props for the CreditCard component
+ */
 export interface CreditCardProps {
+  /** Card number to display (formatted automatically) */
   cardNumber: string;
+  /** Name of the card holder */
   cardHolder: string;
+  /** Expiry date in MM/YY format */
   expiryDate: string;
+  /** Card verification value (3-4 digits) */
   cvv: string;
+  /** Override the auto-detected card type */
   issuer?: CardType;
+  /** Enable flipping the card on click */
   flipOnClick?: boolean;
-  width?: string; // e.g., "350px", "100%"
-  maxWidth?: string; // e.g., "500px"
+  /** Width of the card (e.g., "350px", "100%") */
+  width?: string;
+  /** Maximum width of the card (e.g., "500px") */
+  maxWidth?: string;
+  /** ARIA label for the interactive card element */
   ariaLabel?: string;
+  /** ARIA label for the wrapper element */
   wrapperAriaLabel?: string;
+  /** ARIA label for the front of the card */
   cardFrontAriaLabel?: string;
+  /** ARIA label for the back of the card */
   cardBackAriaLabel?: string;
+  /** Label for the card holder field */
   cardHolderLabel?: string;
+  /** Label for the expiry date field */
   expiresLabel?: string;
+  /** Label for the CVV field */
   cvvLabel?: string;
+  /** Text direction of the card content */
   direction?: 'ltr' | 'rtl';
-  className?: string; // Allow adding external classes to the wrapper
+  /** Additional CSS classes to apply to the wrapper */
+  className?: string;
 }
 
 const CreditCard: React.FC<CreditCardProps> = ({

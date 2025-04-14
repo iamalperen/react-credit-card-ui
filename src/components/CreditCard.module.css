@@ -1,19 +1,16 @@
 .wrapper {
-  /* Use CSS var for max-width, default to 420px */
   max-width: var(--card-max-width, 420px);
-  width: 100%; /* Take full width of its parent by default */
-  margin: 0 auto; /* Center the wrapper */
+  width: 100%;
+  margin: 0 auto;
   position: relative;
 }
 
 .scene {
   width: 100%;
-  /* padding-bottom: 61%; */ /* Remove old hack */
-  aspect-ratio: 1.586 / 1; /* Use modern CSS for standard credit card aspect ratio */
+  aspect-ratio: 1.586 / 1;
   position: relative;
   perspective: 1500px;
-  border-radius: 18px; /* Maintain rounded corners */
-  /* overflow: hidden; */ /* Keep overflow visible as requested */
+  border-radius: 18px;
 }
 
 .cardContainer {
@@ -22,17 +19,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Slightly faster transition */
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
   transform-style: preserve-3d;
   cursor: pointer;
-  will-change: transform; /* Optimize animation */
+  will-change: transform;
 }
 
 .cardContainer.flipped {
   transform: rotateY(180deg);
 }
 
-/* Simplified hover effect */
 .cardContainer:hover {
   transform: rotateX(5deg);
   transition: transform 0.4s ease-out;
@@ -62,11 +58,9 @@
     'Open Sans',
     'Helvetica Neue',
     sans-serif;
-  /* box-shadow removed as requested */
-  overflow: hidden; /* Clip internal content (like long text), not the card itself */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  /* Responsive padding using min() and percentage */
   padding: min(1rem, 5%);
 }
 
@@ -78,12 +72,15 @@
 .cardFront.visa {
   background: linear-gradient(135deg, #1a1f71 0%, #0169c1 100%);
 }
+
 .cardFront.mastercard {
   background: linear-gradient(135deg, #eb001b 0%, #f79e1b 100%);
 }
+
 .cardFront.amex {
   background: linear-gradient(135deg, #2e77bc 0%, #6fbae8 100%);
 }
+
 .cardFront.discover {
   background: linear-gradient(135deg, #ff6600 0%, #fcae1e 100%);
 }
@@ -100,25 +97,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Responsive margin */
   margin-bottom: min(1.5rem, 7%);
 }
 
 .cardChip {
-  width: 3.125rem; /* 50px */
-  height: 2.5rem; /* 40px */
-  border-radius: 0.375rem; /* 6px */
+  width: 3.125rem;
+  height: 2.5rem;
+  border-radius: 0.375rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  position: relative; /* Needed for pseudo-element positioning */
-  background: linear-gradient(135deg, #d4af37, #b8860b, #d4af37); /* Gold-like gradient */
+  position: relative;
+  background: linear-gradient(135deg, #d4af37, #b8860b, #d4af37);
   box-shadow:
     inset 0 1px 1px rgba(255, 255, 255, 0.3),
     inset 0 -1px 1px rgba(0, 0, 0, 0.2),
     0 2px 4px rgba(0, 0, 0, 0.2);
-  overflow: hidden; /* Clip internal elements */
+  overflow: hidden;
 }
 
-/* Simulate chip contacts */
 .cardChip::before,
 .cardChip::after {
   content: '';
@@ -145,35 +140,32 @@
 }
 
 .cardLogo {
-  /* Responsive font-size and height */
   font-size: min(1.5em, 5vw);
   font-weight: bold;
-  min-height: min(2.5rem, 10%); /* 40px */
-  line-height: min(2.5rem, 10%); /* 40px */
+  min-height: min(2.5rem, 10%);
+  line-height: min(2.5rem, 10%);
   text-align: right;
   opacity: 0.9;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .cardNumber {
-  /* Responsive font-size and spacing */
-  font-size: min(1.25em, 5vw); /* Slightly smaller base */
-  letter-spacing: min(0.1875rem, 1%); /* 3px */
+  font-size: min(1.25em, 5vw);
+  letter-spacing: min(0.1875rem, 1%);
   margin-bottom: min(1.5rem, 7%);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   font-weight: 500;
   text-align: center;
-  word-spacing: min(0.375rem, 1.5%); /* 6px */
+  word-spacing: min(0.375rem, 1.5%);
 }
 
 .cardInfo {
   display: flex;
   justify-content: space-between;
-  /* Responsive font-size */
   font-size: min(0.85em, 2.5vw);
   text-transform: uppercase;
   margin-top: auto;
-  padding: 0 0.3125rem; /* 5px */
+  padding: 0 0.3125rem;
 }
 
 .infoBlock {
@@ -181,15 +173,13 @@
 }
 
 .infoLabel {
-  /* Use em relative to parent (.cardInfo) */
   font-size: 0.75em;
   opacity: 0.8;
-  margin-bottom: 0.25rem; /* 4px */
+  margin-bottom: 0.25rem;
   font-weight: 600;
 }
 
 .infoValue {
-  /* Use em relative to parent (.cardInfo) */
   font-size: 1em;
   font-weight: 500;
 }
@@ -200,24 +190,23 @@
 }
 
 .magneticStripe {
-  /* Responsive height */
-  height: min(3.4375rem, 15%); /* 55px */
+  height: min(3.4375rem, 15%);
   background-color: black;
-  margin-top: min(1.875rem, 8%); /* 30px */
+  margin-top: min(1.875rem, 8%);
   width: 100%;
 }
 
 .cvvSection {
   width: 90%;
   text-align: right;
-  margin-top: min(1.25rem, 5%); /* 20px */
-  padding-right: 0.625rem; /* 10px */
+  margin-top: min(1.25rem, 5%);
+  padding-right: 0.625rem;
 }
 
 .cvvLabel {
-  font-size: 0.75em; /* Relative to parent */
+  font-size: 0.75em;
   color: #555;
-  margin-bottom: 0.5rem; /* 8px */
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -225,16 +214,15 @@
 .cvvBand {
   background-color: white;
   color: black;
-  /* Responsive padding */
-  padding: min(0.5rem, 2%) min(0.75rem, 3%); /* 8px 12px */
-  border-radius: 0.3125rem; /* 5px */
-  min-height: 2.1875rem; /* 35px */
+  padding: min(0.5rem, 2%) min(0.75rem, 3%);
+  border-radius: 0.3125rem;
+  min-height: 2.1875rem;
   display: inline-block;
-  letter-spacing: 0.125rem; /* 2px */
+  letter-spacing: 0.125rem;
   font-style: italic;
   font-family: 'Courier New', Courier, monospace;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
-  min-width: 3.75rem; /* 60px */
+  min-width: 3.75rem;
   text-align: center;
 }
 
@@ -270,15 +258,9 @@
 .wrapper.rtl .cvvSection {
   text-align: left;
   padding-right: 0;
-  padding-left: 0.625rem; /* 10px */
+  padding-left: 0.625rem;
 }
 
-/* --- Breakpoint Adjustments Removed --- */
-/* Media queries for specific breakpoints are removed as the component
-   should now scale more fluidly based on its container size using min() and %.
-   If specific breakpoint adjustments are needed later, they can be re-added. */
-
-/* Optional Dark Theme Support */
 @media (prefers-color-scheme: dark) {
   .cardBack {
     background: linear-gradient(135deg, #222 0%, #444 100%);

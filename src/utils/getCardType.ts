@@ -1,3 +1,14 @@
+/**
+ * Identifies the credit card type based on the card number
+ * @param cardNumber The credit card number (can include spaces or other non-digit characters)
+ * @returns The identified card type (visa, mastercard, etc.)
+ * @example
+ * // Returns "visa"
+ * getCardType("4111111111111111")
+ *
+ * // Returns "mastercard"
+ * getCardType("5555555555554444")
+ */
 import { CardType, CardInfo } from '../core/types';
 
 // Moved patterns here, assuming getCardType is the primary user

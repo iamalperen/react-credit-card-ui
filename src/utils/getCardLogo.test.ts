@@ -12,7 +12,6 @@ describe('getCardLogo', () => {
     { type: 'jcb', expectedLogo: 'JCB' },
     { type: 'maestro', expectedLogo: 'Maestro' },
     { type: 'unknown', expectedLogo: null },
-    // Cast to CardType for testing edge cases, though shouldn't happen with proper typing
     { type: 'invalid-type' as CardType, expectedLogo: null },
   ];
 
